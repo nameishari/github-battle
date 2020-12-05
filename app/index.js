@@ -5,6 +5,8 @@ import Popular from './components/Popular'
 import Battle from './components/Battle'
 import {ThemeProvider} from './contexts/theme'
 import Nav from './components/Nav'
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import Results from './components/Results'
 
 // A component is concerned about
 // Component
@@ -29,14 +31,22 @@ class App extends React.Component {
     render() {
         // This is JSX, will be compiled by Babel
         return (
-            <ThemeProvider value={this.state}>
-                <div className={this.state.theme}>
-                    <div className='container'>
-                        <Nav />
-                        <Battle />
+            <Router>
+                <ThemeProvider value={this.state}>
+                    <div className={this.state.theme}>
+                        <div className='container'>
+                            <Nav />
+                            <Switch>
+                                <Route exact path='/' component={Popular}/>
+                                <Route exact path='/battle' component={Battle}/>
+                                <Route path='/battle/results' component={Results} />
+                                {/* <Redirect from='/old' to='/new'/> */}
+                                <Route render={() => (<h1>404</h1>)}/>
+                            </Switch>
+                        </div>
                     </div>
-                </div>
-            </ThemeProvider>
+                </ThemeProvider>
+            </Router>
         )
     }
 }
