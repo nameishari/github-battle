@@ -18,16 +18,13 @@ const Results = React.lazy(() => import('./components/Results'))
 
 // A component is a class which extends React.Component
 class App extends React.Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
-            theme: 'light',
-            toggleTheme: () => {
-                this.setState(({ theme }) => ({
-                    theme: theme === 'light' ? 'dark' : 'light'
-                }))
-            }
+    
+    state = {
+        theme: 'light',
+        toggleTheme: () => {
+            this.setState(({ theme }) => ({
+                theme: theme === 'light' ? 'dark' : 'light'
+            }))
         }
     }
     render() {

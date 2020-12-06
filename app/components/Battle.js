@@ -34,22 +34,15 @@ function Instructions() {
 }
 
 class PlayerInput extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            userName: ''
-        }
 
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleOnChange = this.handleOnChange.bind(this)
-    }
+    state = { userName: '' }
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault()
         this.props.onSubmit(this.state.userName)
     }
 
-    handleOnChange(event) {
+    handleOnChange = (event) => {
         this.setState({
             userName: event.target.value
         })
@@ -120,23 +113,18 @@ function PlayerPreview({ username, onReset, label }) {
 
 export default class Battle extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            playerOne: null,
-            playerTwo: null,
-        }
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleReset = this.handleReset.bind(this)
+    state = {
+        playerOne: null,
+        playerTwo: null,
     }
 
-    handleSubmit(id, player) {
+    handleSubmit = (id, player) => {
         this.setState({
             [id]: player
         })
     }
 
-    handleReset(id) {
+    handleReset = (id) => {
         this.setState({
             [id]: null
         })
@@ -162,12 +150,12 @@ export default class Battle extends React.Component {
                     </div>
                     {playerOne && playerTwo &&
                         (
-                            <Link 
-                            className='btn dark-btn btn-space' 
-                            to={{
-                                pathname: '/battle/results',
-                                search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`
-                              }}
+                            <Link
+                                className='btn dark-btn btn-space'
+                                to={{
+                                    pathname: '/battle/results',
+                                    search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`
+                                }}
                             >Battle</Link>
                         )
                     }
