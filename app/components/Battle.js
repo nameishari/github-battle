@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaUserFriends, FaFighterJet, FaTrophy, FaTimesCircle } from 'react-icons/fa'
-import PropTypes, { func } from 'prop-types'
-import ThemeContext, { ThemeConsumer } from '../contexts/theme'
+import PropTypes from 'prop-types'
+import ThemeContext from '../contexts/theme'
 import { Link } from 'react-router-dom'
 
 function Instructions() {
