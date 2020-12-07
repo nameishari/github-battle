@@ -1,4 +1,4 @@
-# github-battle
+# Github Battle
 
 This is a fun project where you can see most popular repositories and Compare two users (let's say battle between two users ;) )
 
