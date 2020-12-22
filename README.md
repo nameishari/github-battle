@@ -7,8 +7,9 @@ To see in action, please visit - https://react-project-one-github-battle.netlify
 This project is created while I was exploring react ecosystem (Including hooks, router v4, redux etc..,)
 
 This repository has diffrent branches:
-1) **main** - uses just basic react with react-router v4.
-2) **use_react_hooks** - as name says, it uses react hooks everywhere. i.e.., Farewell Class Components 😭 and Welcome Functional Components 👋 
+1) **main** - uses typescript (I 💓 Types) with react hooks (Farewell Class Components 😭 and Welcome Functional Components 👋)
+2) **react_without_hooks** - as name says, it uses just normal react with regular class components and withot react hooks (it uses javascript)
+3) **with_hooks_js** - It uses hooks but written in java script.
 
 # How to run?
 1) npm install - this will install all the node modules.
