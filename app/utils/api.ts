@@ -12,7 +12,9 @@ function getErrorMsg(message: string, username: string) {
 
 export interface User {
   id: string;
-  followers: number
+  followers: number;
+  login: string;
+  avatar_url: string;
 }
 function getProfile(username: string): Promise<User> {
   return fetch(`https://api.github.com/users/${username}${params}`)
@@ -42,6 +44,11 @@ function getRepos(username: string): Promise<Repo[]> {
 
 export interface Repo {
   stargazers_count: number;
+  name: string;
+  owner: User;
+  html_url: string;
+  forks: number;
+  open_issues: number;
 }
 
 function getStarCount(repos: Repo[]) {
