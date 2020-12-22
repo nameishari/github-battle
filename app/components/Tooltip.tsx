@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode, CSSProperties } from 'react'
 import PropTypes from 'prop-types'
 //import withHover from './withHover'
 //import Hover from './Hover'
@@ -8,7 +8,7 @@ const styles = {
   container: {
     position: 'relative',
     display: 'flex'
-  },
+  } as CSSProperties,
   tooltip: {
     boxSizing: 'border-box',
     position: 'absolute',
@@ -23,10 +23,10 @@ const styles = {
     color: '#fff',
     textAlign: 'center',
     fontSize: '14px',
-  }
+  } as CSSProperties
 }
 
-export default function Tooltip({ text, children }) {
+export default function Tooltip({ text, children }: {text:string, children:ReactNode}) {
   const [hovering, attrs] = userHover()
 
   return (
