@@ -9,7 +9,7 @@ const styles = {
     right: '0',
     marginTop: '20px',
     textAlign: 'center',
-  }
+  } as React.CSSProperties
 }
 
 export default function Loading({ speed = 300, text = 'Loading' }) {
